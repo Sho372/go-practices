@@ -26,14 +26,14 @@ func main() {
 	//fmt.Printf("%v length: %v, capacity: %v\n", buf, len(buf), cap(buf))
 
 	//#3-2. This is often done when transforming values in one slice and storing them in a second.
-	s1 := []int{1, 2, 3, 4, 5}
-	s2 := make([]int, 5)
-	fmt.Printf("s1: %v length: %v, capacity: %v\n", s1, len(s1), cap(s1))
-	fmt.Printf("s2: %v length: %v, capacity: %v\n", s2, len(s2), cap(s2))
-	for i := range s2 {
-		s2[i] = 2 * s1[i]
+	original := []int{1, 2, 3, 4, 5}
+	double := make([]int, 5)
+	fmt.Printf("original: %v length: %v, capacity: %v\n", original, len(original), cap(original))
+	fmt.Printf("double: %v length: %v, capacity: %v\n", double, len(double), cap(double))
+	for i, v := range original {
+		double[i] = 2 * v 
 	}
-	fmt.Printf("s2: %v length: %v, capacity: %v\n", s2, len(s2), cap(s2))
+	fmt.Printf("double: %v length: %v, capacity: %v\n", double, len(double), cap(double))
 
 	//#3-3.
 	//Comparing with zero lenght slice #1
@@ -72,4 +72,14 @@ func main() {
 	}
 	fmt.Printf("e: %v length: %v, capacity: %v\n", e, len(e), cap(e))
 	fmt.Printf("f: %v length: %v, capacity: %v\n", f, len(f), cap(f))
+
+	var g []int
+	h := make([]int, 0)
+	var j = []int{}
+	fmt.Printf("g: %v length: %v, capacity: %v\n", g, len(g), cap(g))
+	fmt.Printf("h: %v length: %v, capacity: %v\n", h, len(h), cap(h))
+	fmt.Printf("j: %v length: %v, capacity: %v\n", j, len(j), cap(j))
+	fmt.Println(g == nil)
+	fmt.Println(h == nil)
+	fmt.Println(j == nil)
 }
