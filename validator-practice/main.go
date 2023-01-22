@@ -1,9 +1,9 @@
 package main
 
 import (
+	"./model"
 	"encoding/json"
 	"fmt"
-	//"validator-practice/model"
 
 	"github.com/go-playground/validator/v10"
 )

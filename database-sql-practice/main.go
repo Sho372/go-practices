@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	empNo int
+	empNo     int
 	firstName string
-	lastName string
+	lastName  string
 )
 
 func main() {

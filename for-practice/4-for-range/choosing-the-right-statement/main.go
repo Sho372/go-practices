@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Println()
 
-	for i := 1; i < len(evenVals) - 1; i++ {
+	for i := 1; i < len(evenVals)-1; i++ {
 		fmt.Println(evenVals[i])
 	}
 

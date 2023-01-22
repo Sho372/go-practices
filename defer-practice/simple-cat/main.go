@@ -7,10 +7,10 @@ import (
 	"os"
 )
 
-	/*
+/*
 	Reading a file in chunks
 	https://kgrz.io/reading-files-in-go-an-overview.html
-	*/
+*/
 
 func main() {
 

@@ -18,7 +18,7 @@ func main() {
 
 	fmt.Println()
 
-	outer:
+outer:
 	for _, s := range samples {
 		for i, r := range s {
 			fmt.Println(i, r, string(r))

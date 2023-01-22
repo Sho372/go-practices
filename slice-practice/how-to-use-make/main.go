@@ -18,6 +18,6 @@ func main() {
 	fmt.Printf("%v length: %v, capacity: %v\n", x, len(x), cap(x))
 
 	// We can't directly index into it, but we can append values to it;
-	x = append(x, 5,6,7,8)
+	x = append(x, 5, 6, 7, 8)
 	fmt.Printf("%v length: %v, capacity: %v\n", x, len(x), cap(x))
 }

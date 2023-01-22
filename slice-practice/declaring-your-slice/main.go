@@ -31,7 +31,7 @@ func main() {
 	fmt.Printf("original: %v length: %v, capacity: %v\n", original, len(original), cap(original))
 	fmt.Printf("double: %v length: %v, capacity: %v\n", double, len(double), cap(double))
 	for i, v := range original {
-		double[i] = 2 * v 
+		double[i] = 2 * v
 	}
 	fmt.Printf("double: %v length: %v, capacity: %v\n", double, len(double), cap(double))
 
