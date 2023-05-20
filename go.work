@@ -1,0 +1,6 @@
+go 1.19
+
+use (
+	./standard-library
+	./visualizing-concurreucy
+)

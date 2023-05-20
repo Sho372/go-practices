@@ -6,26 +6,25 @@ import (
 )
 
 type (
-
 	response struct {
-		Status int `json:"status"`
-		Data data
+		Status       int `json:"status"`
+		Data         data
 		Responsetime string
 	}
 
 	data struct {
 		JpyVolume string
 		TierLevel int
-		Limit []limit
+		Limit     []limit
 	}
 
 	limit struct {
-		Symbol string
+		Symbol             string
 		TodayLimitOpenSize string
-		TodayLimitBuySize string
+		TodayLimitBuySize  float64
+
 		TodayLimitSellSize string
 	}
-
 )
 
 func main() {
@@ -42,7 +41,7 @@ func main() {
          },
          {
            "symbol": "BTC",
-           "todayLimitBuySize": "98",
+	   "todayLimitBuySize": 98.1,
            "todayLimitSellSize": "102"
          }
       ]
@@ -50,12 +49,13 @@ func main() {
   "responsetime": "2019-03-19T02:15:06.055Z"
 }`)
 
-//	var res response
-	var res interface{}
+	var res response
 	err := json.Unmarshal(bs, &res)
 	if err != nil {
 		panic(nil)
 	}
 	//%+vでキー名まで表示
-	fmt.Printf("%+v\n", res)
+	//	fmt.Printf("%+v\n", res)
+	fmt.Printf("TodayLimitBuySize: %v\n", res.Data.Limit[1].TodayLimitBuySize)
+	fmt.Printf("TodayLimitBuySize: ", res.Data.Limit[1].TodayLimitBuySize)
 }
