@@ -1,6 +1,10 @@
 go 1.19
 
 use (
+	./concurrency-patterns/truning-off-a-case-in-a-select
+	./database-sql-practice
+	./echo-practice
+	./rabbitmq-tutorials
 	./standard-library
 	./visualizing-concurreucy
 )
