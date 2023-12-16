@@ -7,12 +7,12 @@ func searchData(s string, searchaers []func(string) []string) []string {
 		// worker goroutine
 		go func(searcher func(string) []string) {
 			select {
-			case result <- searcher(s):
-			case <-done:
+			case result <- searcher(s): // send
+			case <-done: // receive
 			}
 		}(searcher)
 	}
-	r := <-result
-	close(done)
+	r := <-result // receive
+	close(done) // send
 	return r
 }

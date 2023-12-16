@@ -9,12 +9,23 @@ import (
 	"time"
 )
 
+/*
+time: 18.517552416s, proc: 5
+*/
 
 func main() {
 	//inのデータ送信数と起動go routineの数を一致させたほうが効率が良くなる?
-	in := tick(6)
-	result := processAndGather(in, amplify, 6)
+	in := tick(1000000)
+
+	startTime := time.Now()
+
+	result := processAndGather(in, amplify, 100)
+
+	endTime := time.Now()
+	executionTime := endTime.Sub(startTime)
+
 	fmt.Println(result)
+	fmt.Printf("time: %v\n", executionTime)
 }
 
 func amplify(i int) int {
@@ -29,7 +40,7 @@ func tick(n int) <-chan int {
 	defer close(in)
 
 	for i := 0; i < n; i++ {
-		time.Sleep(1*time.Second)
+		// time.Sleep(1*time.Second)
 		in <- i
 		fmt.Printf("Send %v\n", i)
 	}
