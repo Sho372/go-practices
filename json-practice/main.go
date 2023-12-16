@@ -57,5 +57,5 @@ func main() {
 	//%+vでキー名まで表示
 	//	fmt.Printf("%+v\n", res)
 	fmt.Printf("TodayLimitBuySize: %v\n", res.Data.Limit[1].TodayLimitBuySize)
-	fmt.Printf("TodayLimitBuySize: ", res.Data.Limit[1].TodayLimitBuySize)
+	fmt.Printf("TodayLimitBuySize: %v\n", res.Data.Limit[1].TodayLimitBuySize)
 }

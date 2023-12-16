@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"time"
+
+	"io"
 
 	"sho372.tech/http-client-error-handling-practice/models"
 )
@@ -54,7 +55,7 @@ func (c *Client) Ticker(args models.TickerArgs) (models.TickerRes, error) {
 	//defer res.Body.Close()
 
 	var tickerRes models.TickerRes
-	bodyBytes, _ := ioutil.ReadAll(res.Body)
+	bodyBytes, _ := io.ReadAll(io.Reader(res.Body))
 	fmt.Printf("bodyBytes: %v", string(bodyBytes))
 	json.Unmarshal(bodyBytes, &tickerRes)
 	//	if err := json.NewDecoder(res.Body).Decode(&tickerRes); err != nil {
@@ -69,7 +70,7 @@ func (c *Client) Ticker(args models.TickerArgs) (models.TickerRes, error) {
 
 	//https://stackoverflow.com/questions/46948050/how-to-read-request-body-twice-in-golang-middleware
 	//error responseをデコードするために、再度res.Bodyのバッファを用意
-	res.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
+	res.Body = io.NopCloser(io.Reader(bytes.NewBuffer(bodyBytes)))
 
 	switch status {
 	case 0:

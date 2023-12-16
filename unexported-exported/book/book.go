@@ -2,7 +2,8 @@ package book
 
 import (
 	"fmt"
-	"person"
+
+	"github.com/Sho372/go-practices/unexported-exported/person"
 )
 
 type Book struct {

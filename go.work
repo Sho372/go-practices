@@ -5,7 +5,10 @@ use (
 	./cording-rule
 	./database-sql-practice
 	./echo-practice
+	./http-client-error-handling-practice
 	./rabbitmq-tutorials
 	./standard-library
+	./unexported-exported
+	./validator-practice
 	./visualizing-concurreucy
 )
