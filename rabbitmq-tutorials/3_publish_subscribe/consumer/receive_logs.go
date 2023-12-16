@@ -21,6 +21,7 @@ func main() {
 	failOnError(err, "Failed to open a channel")
 	defer ch.Close()
 
+	//exchangeを宣言しなくても動く
 	err = ch.ExchangeDeclare(
 		"logs",   // name
 		"fanout", // type
