@@ -1,4 +1,4 @@
-go 1.19
+go 1.21.6
 
 use (
 	./concurrency-patterns/truning-off-a-case-in-a-select
@@ -11,4 +11,5 @@ use (
 	./unexported-exported
 	./validator-practice
 	./visualizing-concurreucy
+	./dbr-postgres-practice
 )
