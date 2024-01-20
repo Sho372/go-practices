@@ -10,7 +10,7 @@ The Sakila example database
 
 jsonでポートフォワーディング有効にしても、効かなかった？から、VSCodeで直接追加したらローカルからアクセスできた
 
-![Untitled](VSCode%20Dev%20Containers%E3%81%A6%E3%82%99Docker%E7%92%B0%E5%A2%83%E9%96%8B%E7%99%BA%20ae98071ad5144fd9a74eb14e7882be23/Untitled%201.png)
+![Alt text](<Untitled 1.png>)
 
 1. psqlコマンドでログイン確認
     

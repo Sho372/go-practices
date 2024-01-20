@@ -12,6 +12,7 @@
 | 8   | http-client-error-handling-practice | シンプルなapi client                                            |                                                                   |
 | 9   | unexported-exported                 | パッケージのexport/unexportの確認                                   |                                                                   |
 | 10  | rabbitmq-tutorials                  | Rabbit MQの公式チュートリアルの模写                                     | https://www.rabbitmq.com/tutorials/tutorial-one-go.html           |
+| 11  | dbr-postgres-practice |  Go+Postgresの開発コンテナを使ってdbrパッケージの練習。データは[Sakila](https://github.com/jOOQ/sakila)(postgres版)| https://github.com/devcontainers/templates/tree/main/src/go-postgres </br> https://github.com/jOOQ/sakila          |
 
 # Tips
 
