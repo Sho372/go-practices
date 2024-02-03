@@ -14,17 +14,37 @@
 | 10  | rabbitmq-tutorials                  | Rabbit MQの公式チュートリアルの模写                                     | https://www.rabbitmq.com/tutorials/tutorial-one-go.html           |
 | 11  | dbr-postgres-practice |  Go+Postgresの開発コンテナを使ってdbrパッケージの練習。データは[Sakila](https://github.com/jOOQ/sakila)(postgres版)| https://github.com/devcontainers/templates/tree/main/src/go-postgres </br> https://github.com/jOOQ/sakila          |
 
-# Tips
+# ディレクトリ構成について
+何も考えずに適当にmain.goを追加していったら、マルチモジュールになっていた。(go.modがいたるところある)
 
 ## go.work
-複数のモジュール（go.mod）が入っている。モジュールを追加するごとにgo.workに追加する。
+モジュールを追加するごとにgo.workに追加する。
 
 ## パッケージの作成
-パッケージ作る時は、ディレクトリも必要
 
 > [!NOTE]
 >Goでは、パッケージを作成するためにディレクトリを作成する必要があります。Goの標準的なプラクティスでは、パッケージごとに個別のディレクトリを使用し、そのディレクトリ名とパッケージ名を一致させることが推奨されています。
 >例えば、`person`パッケージを作成する場合、`person`という名前のディレクトリを作成し、その中に`person.go`という名前のファイルを作成することになります。同様に、`book`パッケージも`book`という名前のディレクトリを作成し、その中に`book.go`という名前のファイルを作成します。
 >この構造を使うことで、コードを整理し、パッケージを明確に区別しやすくなります。また、パッケージを利用する他のコードからも、明示的なインポートパスでアクセスできるようになります。
 
+
+## ローカルパッケージのインポート
+以下を参照
+* [Goのローカルパッケージのインポートについて](https://zenn.dev/nobonobo/articles/1d4afb9f4e8873)
+* [Goのプロジェクト構成の基本](https://zenn.dev/nobonobo/articles/4fb018a24f9ee9)
+
+> [!TIP]
+> * モジュール直下パッケージの参照には「import "モジュール名"」を使う
+> * サブパッケージの参照には「import "モジュール名/サブパッケージパス"」を使う
+
+あまり良い例ではないけど...
+```go
+import (
+	"github.com/Sho372/go-practices/cording-rule/error-handling/dummy"
+)
+```
+
+
+* `github.com/Sho372/go-practices/cording-rule` がmodule名
+* `error-handling/dummy`がサブパッケージパス
 
